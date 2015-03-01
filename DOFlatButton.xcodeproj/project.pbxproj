@@ -13,6 +13,7 @@
 		70BD23991AA29A07004B6C43 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70BD23981AA29A07004B6C43 /* Images.xcassets */; };
 		70BD239C1AA29A07004B6C43 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70BD239A1AA29A07004B6C43 /* LaunchScreen.xib */; };
 		70BD23A81AA29A07004B6C43 /* DOFlatButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BD23A71AA29A07004B6C43 /* DOFlatButtonTests.swift */; };
+		70BD23B21AA29A95004B6C43 /* DOFlatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BD23B11AA29A95004B6C43 /* DOFlatButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		70BD23A11AA29A07004B6C43 /* DOFlatButtonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DOFlatButtonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		70BD23A61AA29A07004B6C43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70BD23A71AA29A07004B6C43 /* DOFlatButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOFlatButtonTests.swift; sourceTree = "<group>"; };
+		70BD23B11AA29A95004B6C43 /* DOFlatButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DOFlatButton.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				70BD23911AA29A07004B6C43 /* AppDelegate.swift */,
 				70BD23931AA29A07004B6C43 /* ViewController.swift */,
+				70BD23B11AA29A95004B6C43 /* DOFlatButton.swift */,
 				70BD23951AA29A07004B6C43 /* Main.storyboard */,
 				70BD23981AA29A07004B6C43 /* Images.xcassets */,
 				70BD239A1AA29A07004B6C43 /* LaunchScreen.xib */,
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70BD23B21AA29A95004B6C43 /* DOFlatButton.swift in Sources */,
 				70BD23941AA29A07004B6C43 /* ViewController.swift in Sources */,
 				70BD23921AA29A07004B6C43 /* AppDelegate.swift in Sources */,
 			);
