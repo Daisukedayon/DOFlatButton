@@ -13,7 +13,11 @@ import UIKit
 
 class DOFlatButton :UIButton
 {
-    internal var faceColor:NSMutableDictionary?
+    private var faceColors:NSMutableDictionary = [:]
+    private var sideColors:NSMutableDictionary?
+    private var borderColors:NSMutableDictionary?
+    
+    internal var faceColor:UIColor?
     internal var sideColor:UIColor?{
         set{
             self.sideColor = newValue
@@ -38,7 +42,7 @@ class DOFlatButton :UIButton
     
     internal func setFaceColor(faceColor:UIColor,state:UIControlState)
     {
-        
+        self.faceColors[state] = faceColor
     }
     internal func setSideColor(sideColor:UIColor,state:UIControlState)
     {
@@ -80,7 +84,9 @@ class DOFlatButton :UIButton
     
     func dofb_init()
     {
-        self.faceColor = NSMutableDictionary
+        self.faceColors = NSMutableDictionary()
+        self.sideColors = NSMutableDictionary()
+        self.borderColors = NSMutableDictionary()
         
         self.faceColor = UIColor(red: 0.333, green: 0.631, blue: 0.851, alpha: 1.0)
         self.sideColor = UIColor(red: 0.310, green: 0.498, blue: 0.702, alpha: 1.0)
@@ -165,10 +171,7 @@ class DOFlatButton :UIButton
         self.setBorderColor(borderColor, state: UIControlState.Disabled)
     }
     
-    func setFaceColor(surfaceColor:UIColor,state:UIControlState)
-    {
-        self.faceColorForState[state] = surfaceColor
-    }
+
     
     
     
