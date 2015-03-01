@@ -50,7 +50,15 @@ class DOFlatButton :UIButton
         
     }
     
-    override init()
+    override func encodeWithCoder(aCoder: NSCoder) {
+        
+    }
+    
+    required convenience init(coder aDecoder: NSCoder) {
+        self.dofb_init()
+    }
+    
+    func dofb_init()
     {
         self.faceColor = UIColor(red: 0.333, green: 0.631, blue: 0.851, alpha: 1.0)
         self.sideColor = UIColor(red: 0.310, green: 0.498, blue: 0.702, alpha: 1.0)
@@ -63,4 +71,15 @@ class DOFlatButton :UIButton
         
         self.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
     }
+    
+    override func layoutSubviews()
+    {
+        var frame:CGRect = self.titleLabel!.frame
+        frame.origin.y = frame.origin.y - self.margin/2
+        
+        var imageViewFrame:CGRect = self.imageView?.frame
+        
+        
+    }
 }
+
