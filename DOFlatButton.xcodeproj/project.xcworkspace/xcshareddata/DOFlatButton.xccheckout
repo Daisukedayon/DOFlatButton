@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>4A417361-BBDD-4A7B-9C17-F727684A0C3B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>DOFlatButton</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>42D057AF320CB3980D47BF02817305B800E74293</key>
+		<string>https://github.com/Daisukedayon/DOFlatButton.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>DOFlatButton.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>42D057AF320CB3980D47BF02817305B800E74293</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Daisukedayon/DOFlatButton.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>42D057AF320CB3980D47BF02817305B800E74293</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>42D057AF320CB3980D47BF02817305B800E74293</string>
+			<key>IDESourceControlWCCName</key>
+			<string>DOFlatButton</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -13,7 +13,7 @@ import UIKit
 
 class DOFlatButton :UIButton
 {
-    private var faceColors:NSMutableDictionary = [:]
+    private var faceColors:Dictionary<UIControlState,UIColor> = [:]
     private var sideColors:NSMutableDictionary?
     private var borderColors:NSMutableDictionary?
     
