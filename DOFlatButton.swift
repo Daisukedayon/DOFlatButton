@@ -13,9 +13,9 @@ import UIKit
 
 class DOFlatButton :UIButton
 {
-    private var faceColors:Dictionary<UIControlState,UIColor> = [:]
-    private var sideColors:NSMutableDictionary?
-    private var borderColors:NSMutableDictionary?
+    private var faceColors:Dictionary<UInt,UIColor>?
+    private var sideColors:Dictionary<UInt,UIColor>?
+    private var borderColors:Dictionary<UInt,UIColor>?
     
     internal var faceColor:UIColor?
     internal var sideColor:UIColor?{
@@ -42,30 +42,30 @@ class DOFlatButton :UIButton
     
     internal func setFaceColor(faceColor:UIColor,state:UIControlState)
     {
-        self.faceColors[state] = faceColor
+        self.faceColors?[state.rawValue] = faceColor
     }
     internal func setSideColor(sideColor:UIColor,state:UIControlState)
     {
-        
+        self.sideColors?[state.rawValue] = sideColor
     }
     internal func setBorderColor(borderColor:UIColor,state:UIControlState)
     {
-        
+        self.borderColors?[state.rawValue] = borderColor
     }
     
     internal func faceColorForState(state:UIControlState) -> UIColor
     {
-        
+        return (self.faceColors?[state.rawValue])!
     }
     
     internal func sideColorForState(state:UIControlState) -> UIColor
     {
-        
+        return (self.sideColors?[state.rawValue])!
     }
     
     internal func borderColorForState(state:UIControlState) -> UIColor
     {
-        
+        return (self.borderColors?[state.rawValue])!
     }
     
     override func encodeWithCoder(aCoder: NSCoder) {
@@ -84,9 +84,9 @@ class DOFlatButton :UIButton
     
     func dofb_init()
     {
-        self.faceColors = NSMutableDictionary()
-        self.sideColors = NSMutableDictionary()
-        self.borderColors = NSMutableDictionary()
+        self.faceColors = [:]
+        self.sideColors = [:]
+        self.borderColors = [:]
         
         self.faceColor = UIColor(red: 0.333, green: 0.631, blue: 0.851, alpha: 1.0)
         self.sideColor = UIColor(red: 0.310, green: 0.498, blue: 0.702, alpha: 1.0)
