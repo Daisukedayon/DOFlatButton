@@ -17,7 +17,7 @@ class DOFlatButton :UIButton
     private var sideColors:Dictionary<UInt,UIColor>?
     private var borderColors:Dictionary<UInt,UIColor>?
     
-    internal var faceColor:UIColor?
+    internal var faceColor:UIColor = UIColor(red: 0.333, green: 0.631, blue: 0.851, alpha: 1.0)
     internal var sideColor:UIColor?{
         set{
             self.sideColor = newValue
@@ -71,13 +71,17 @@ class DOFlatButton :UIButton
     override func encodeWithCoder(aCoder: NSCoder) {
         
     }
-    required convenience override init(frame:CGRect){
-        self.init()
+    required override init(frame:CGRect){
+        //self.init()
+        
+        super.init()
         self.dofb_init()
+        
     }
     
-    required convenience init(coder aDecoder: NSCoder) {
-        self.init()
+    required init(coder aDecoder: NSCoder) {
+        //self.init()
+        super.init()
         self.dofb_init()
     }
     

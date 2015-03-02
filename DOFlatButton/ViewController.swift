@@ -10,11 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var FlatButton: DOFlatButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        FlatButton = DOFlatButton()
+        var button1 = DOFlatButton.buttonWithType(UIButtonType.Custom) as DOFlatButton
+        
+        button1.frame = CGRectMake(60, 164 - 20 - 40, 200, 60);
+        
+        button1.faceColor = UIColor(red: 86.0/255.0, green: 161.0/255.0, blue: 217.0/255.0, alpha: 1.0)
+        button1.sideColor = UIColor(red: 79.0/255.0, green: 127.0/255.0, blue: 179.0/255.0, alpha: 1.0)
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
