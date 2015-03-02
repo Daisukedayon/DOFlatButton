@@ -71,6 +71,10 @@ class DOFlatButton :UIButton
     override func encodeWithCoder(aCoder: NSCoder) {
         
     }
+    required convenience override init(frame:CGRect){
+        self.init()
+        self.dofb_init()
+    }
     
     required convenience init(coder aDecoder: NSCoder) {
         self.init()

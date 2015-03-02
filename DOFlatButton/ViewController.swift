@@ -10,9 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var FlatButton: DOFlatButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        FlatButton = DOFlatButton()
     }
 
     override func didReceiveMemoryWarning() {
