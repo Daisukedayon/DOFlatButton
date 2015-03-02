@@ -171,6 +171,14 @@ class DOFlatButton :UIButton
         self.setBorderColor(borderColor, state: UIControlState.Disabled)
     }
     
+    override func drawRect(rect: CGRect) {
+        super.drawRect(rect)
+        
+        var size:CGSize = self.bounds.size
+        
+        var surfaceRect:
+    }
+    
 
     
     
