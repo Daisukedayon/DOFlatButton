@@ -176,7 +176,65 @@ class DOFlatButton :UIButton
         
         var size:CGSize = self.bounds.size
         
-        var surfaceRect:
+        var surfaceRect:CGRect = CGRectMake(0, 0, size.width, size.height)
+        var surfaceImage:UIImage
+        
+        UIGraphicsBeginImageContextWithOptions(surfaceRect.size, false, 0.0);
+        
+        var borderColor:UIColor? = self.borderColorForState(self.state)
+        if(borderColor != nil){
+            borderColor!.set()
+            self.drawRoundedRect(surfaceRect, radius: self.radius!, context: UIGraphicsGetCurrentContext())
+        }
+            
+        self.faceColorForState(self.state).set()
+        
+        self.drawRoundedRect(CGRectInset(surfaceRect, self.borderWidth!, self.borderWidth!), radius: (self.radius! - self.borderWidth!), context: UIGraphicsGetCurrentContext())
+        
+        surfaceImage = UIGraphicsGetImageFromCurrentImageContext()
+        
+        UIGraphicsEndImageContext();
+        
+        self.sideColorForState(self.state).set()
+        
+        var sideRect:CGRect = CGRectMake(0,size.height * 1.0 / 4.0,size.width,size.height * 3.0/4.0)
+        
+        self.drawRoundedRect(sideRect, radius: self.radius!, context: UIGraphicsGetCurrentContext())
+        
+        var actualSurfaceRect:CGRect
+        
+        if(self.state == UIControlState.Selected || self.state == UIControlState.Highlighted){
+            actualSurfaceRect = CGRectMake(0, self.depth!, size.width, size.height - self.margin!)
+        }else {
+            actualSurfaceRect = CGRectMake(0, 0, size.width, size.height - self.margin!)
+        }
+        
+        surfaceImage.drawInRect(actualSurfaceRect)
+        
+    }
+    
+    func drawRoundedRect(var rect:CGRect,radius:CGFloat,context:CGContextRef)
+    {
+        rect.origin.x += 0.5
+        rect.origin.y += 0.5
+        rect.size.width -= 1.0
+        rect.size.height -= 1.0
+        
+        var minX:CGFloat = CGRectGetMinX(rect)
+        var midX:CGFloat = CGRectGetMidX(rect)
+        var maxX:CGFloat = CGRectGetMaxX(rect)
+        var minY:CGFloat = CGRectGetMinY(rect)
+        var midY:CGFloat = CGRectGetMidY(rect)
+        var maxY:CGFloat = CGRectGetMaxY(rect)
+        
+        CGContextMoveToPoint(context, minX, midY);
+        CGContextAddArcToPoint(context, minX, minY, midX, minY, radius);
+        CGContextAddArcToPoint(context, maxX, minY, maxX, midY, radius);
+        CGContextAddArcToPoint(context, maxX, maxY, midX, maxY, radius);
+        CGContextAddArcToPoint(context, minX, maxY, minX, midY, radius);
+        CGContextClosePath(context);
+        
+        CGContextDrawPath(context, kCGPathFillStroke);
     }
     
 
