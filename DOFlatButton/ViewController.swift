@@ -29,11 +29,11 @@ class ViewController: UIViewController {
         
         self.view.addSubview(button1)
         
-        var button2 = DOFlatButton.buttonWithType(UIButtonType.Custom) as DOFlatButton
+        /*var button2 = DOFlatButton.buttonWithType(UIButtonType.Custom) as DOFlatButton
         button2.frame = CGRectMake(60, 224 - 20, 200, 60)
         button2.faceColor = UIColor(red: 243.0/255.0, green: 152.0/255.0, blue: 0, alpha: 1.0)
         button2.sideColor = UIColor(red: 170.0/255.0, green: 105.0/255.0, blue: 0, alpha: 1.0)
-        //button2.radius =
+        //button2.radius =*/
         
         
     }

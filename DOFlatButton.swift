@@ -63,16 +63,26 @@ class DOFlatButton :UIButton
     
     internal func faceColorForState(state:UIControlState) -> UIColor
     {
+        if self.faceColors?[state.rawValue] == nil{
+            return (self.faceColors?[UIControlState.Normal.rawValue])!
+        }
+        
         return (self.faceColors?[state.rawValue])!
     }
     
     internal func sideColorForState(state:UIControlState) -> UIColor
     {
+        if self.sideColors?[state.rawValue] == nil{
+            return (self.sideColors?[UIControlState.Normal.rawValue])!
+        }
         return (self.sideColors?[state.rawValue])!
     }
     
     internal func borderColorForState(state:UIControlState) -> UIColor
     {
+        if self.borderColors?[state.rawValue] == nil{
+            return (self.borderColors?[UIControlState.Normal.rawValue])!
+        }
         return (self.borderColors?[state.rawValue])!
     }
     
@@ -124,7 +134,8 @@ class DOFlatButton :UIButton
         var imageViewFrame:CGRect = self.imageView!.frame
         imageViewFrame.origin.y = imageViewFrame.origin.y - self.margin!/2
         
-        if(self.state == UIControlState.Selected || self.state == UIControlState.Highlighted){
+        if(!(self.state == UIControlState.Selected || self.state == UIControlState.Highlighted ||
+            self.state == UIControlState.Normal || self.state == UIControlState.Disabled)){
             frame.origin.y = frame.origin.y + self.depth!
             imageViewFrame.origin.y = imageViewFrame.origin.y + self.depth!
         }
@@ -178,6 +189,7 @@ class DOFlatButton :UIButton
         self.setFaceColor(faceColor, state: UIControlState.Highlighted)
         self.setFaceColor(faceColor, state: UIControlState.Selected)
         self.setFaceColor(faceColor, state: UIControlState.Disabled)
+
     }
     
     func setBorderColor(borderColor:UIColor){
@@ -185,6 +197,8 @@ class DOFlatButton :UIButton
         self.setBorderColor(borderColor, state: UIControlState.Highlighted)
         self.setBorderColor(borderColor, state: UIControlState.Selected)
         self.setBorderColor(borderColor, state: UIControlState.Disabled)
+        self.setBorderColor(borderColor, state: UIControlState.Application)
+        self.setBorderColor(borderColor, state: UIControlState.allZeros)
     }
     
     override func drawRect(rect: CGRect) {
