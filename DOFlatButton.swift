@@ -17,18 +17,26 @@ class DOFlatButton :UIButton
     private var sideColors:Dictionary<UInt,UIColor>?
     private var borderColors:Dictionary<UInt,UIColor>?
     
-     var faceColor:UIColor?
-    internal var sideColor:UIColor?{
+    var faceColor:UIColor?{
         set{
-            self.sideColor = newValue
+            self.setFaceColor(newValue!,state:state)
         }
         get{
-            return self.faceColorForState(self.state)
+            return self.faceColorForState(state)
         }
     }
-    internal var borderColor:UIColor?{
+    var sideColor:UIColor?{
         set{
-            self.setBorderColor(self.borderColor!, state: state)
+            self.setSideColor(newValue!, state: state)
+        }
+        
+        get{
+            return self.sideColorForState(state)
+        }
+    }
+    var borderColor:UIColor?{
+        set{
+            self.setBorderColor(newValue!, state: state)
         }
         get{
             return self.borderColorForState(state)
@@ -151,7 +159,7 @@ class DOFlatButton :UIButton
             self.setNeedsDisplay()
         }
         get{
-            return self.selected
+            return super.selected
         }
     }
     
@@ -161,7 +169,7 @@ class DOFlatButton :UIButton
             self.setNeedsDisplay()
         }
         get{
-            return super.highlighted
+            return super.enabled
         }
     }
     
