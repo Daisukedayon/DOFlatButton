@@ -74,14 +74,14 @@ class DOFlatButton :UIButton
     override init(frame:CGRect){
         //self.init()
         
-        super.init()
+        super.init(frame: frame)
         self.dofb_init()
         
     }
     
     required init(coder aDecoder: NSCoder) {
         //self.init()
-        super.init()
+        super.init(coder: aDecoder)
         self.dofb_init()
     }
     
