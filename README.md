@@ -54,4 +54,5 @@ button1.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
 button1.setTitle("DOFlatButton", forState: UIControlState.Normal)  
 self.view.addSubview(button1)  
 
-
+## License
+*DOFlatButton* is released under the **MIT License**
