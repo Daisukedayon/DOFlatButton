@@ -1,6 +1,8 @@
 # DOFlatButton
 Flat-Style Button converted from QBFlatButton
 
+attention!!  this software is in debugging process!!
+
 QBFlatButton is written in Objective-C but I write DOFlatButton by Swift
 
 ##Propertys 
