@@ -39,7 +39,7 @@ class ViewController: UIViewController {
         
         button2.titleLabel?.font = UIFont.boldSystemFontOfSize(16)
         button2.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        button2.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        button2.setTitle("DOFlatButton", forState: UIControlState.Normal)
         
         self.view.addSubview(button2)
         
