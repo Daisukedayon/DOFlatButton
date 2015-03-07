@@ -2,8 +2,7 @@
 //  DOFlatButton.swift
 //  DOFlatButton
 //
-//  Created by 岡大輔 on 2015/03/01.
-//  Copyright (c) 2015年 岡大輔. All rights reserved.
+//  MIT License
 //
 
 import Foundation
