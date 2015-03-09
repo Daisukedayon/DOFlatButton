@@ -125,16 +125,20 @@ class DOFlatButton :UIButton
         self.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
     }
     
+    override func setTitle(title: String?, forState state: UIControlState) {
+        super.setTitle(title, forState: state)
+    }
+    
     override func layoutSubviews()
     {
+        super.layoutSubviews()
         var frame:CGRect = self.titleLabel!.frame
         frame.origin.y = frame.origin.y - self.margin!/2
         
         var imageViewFrame:CGRect = self.imageView!.frame
         imageViewFrame.origin.y = imageViewFrame.origin.y - self.margin!/2
         
-        if(!(self.state == UIControlState.Selected || self.state == UIControlState.Highlighted ||
-            self.state == UIControlState.Normal || self.state == UIControlState.Disabled)){
+        if(self.state == UIControlState.Selected || self.state == UIControlState.Highlighted){
             frame.origin.y = frame.origin.y + self.depth!
             imageViewFrame.origin.y = imageViewFrame.origin.y + self.depth!
         }
