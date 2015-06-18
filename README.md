@@ -3,6 +3,9 @@ Flat-Style Button converted from QBFlatButton
 
 QBFlatButton is written in Objective-C but I write DOFlatButton by Swift
 
+
+![実行画像](https://github.com/daisukeokaoss/DOFlatButton/blob/master/iOS%20Simulator%20Screen%20Shot%202015.06.18%2010.16.35.png)
+
 ##Propertys 
 ###face Color
 A surface color of the button
