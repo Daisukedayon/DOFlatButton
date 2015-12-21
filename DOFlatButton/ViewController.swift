@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        var button1:DOFlatButton = DOFlatButton.buttonWithType(UIButtonType.Custom) as! DOFlatButton
+        let button1:DOFlatButton = DOFlatButton(type: UIButtonType.Custom)
         
         button1.frame = CGRectMake(60, 164 - 20 - 40, 200, 60);
         
@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         
         self.view.addSubview(button1)
         
-        var button2 = DOFlatButton.buttonWithType(UIButtonType.Custom) as! DOFlatButton
+        let button2 = DOFlatButton(type: UIButtonType.Custom)
         button2.frame = CGRectMake(60, 224 - 20, 200, 60)
         button2.faceColor = UIColor(red: 243.0/255.0, green: 152.0/255.0, blue: 0, alpha: 1.0)
         button2.sideColor = UIColor(red: 170.0/255.0, green: 105.0/255.0, blue: 0, alpha: 1.0)
@@ -42,7 +42,7 @@ class ViewController: UIViewController {
         
         self.view.addSubview(button2)
         
-        var button3:DOFlatButton = DOFlatButton.buttonWithType(UIButtonType.Custom) as! DOFlatButton
+        let button3:DOFlatButton = DOFlatButton(type: UIButtonType.Custom)
         button3.frame = CGRectMake(60, 284 + 20, 200, 60);
         button3.faceColor = UIColor(red: 86.0/255.0, green: 161.0/255.0, blue: 217.0/255.0, alpha: 1.0)
         button3.sideColor = UIColor(red: 86.0/255.0, green: 161.0/255.0, blue: 217.0/255.0, alpha: 1.0)
@@ -59,7 +59,7 @@ class ViewController: UIViewController {
         
         self.view.addSubview(button3)
         
-        var button4:DOFlatButton = DOFlatButton.buttonWithType(UIButtonType.Custom) as! DOFlatButton
+        let button4:DOFlatButton = DOFlatButton(type: UIButtonType.Custom)
         button4.frame = CGRectMake(60, 344 + 20 + 40, 200, 60);
         button4.faceColor = UIColor(white: 0.75, alpha: 1.0)
         button4.sideColor = UIColor(white: 0.55, alpha: 1.0)

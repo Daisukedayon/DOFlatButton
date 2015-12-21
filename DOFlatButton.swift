@@ -96,7 +96,7 @@ class DOFlatButton :UIButton
         
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         //self.init()
         super.init(coder: aDecoder)
         self.dofb_init()
@@ -201,7 +201,7 @@ class DOFlatButton :UIButton
         self.setBorderColor(borderColor, state: UIControlState.Selected)
         self.setBorderColor(borderColor, state: UIControlState.Disabled)
         self.setBorderColor(borderColor, state: UIControlState.Application)
-        self.setBorderColor(borderColor, state: UIControlState.allZeros)
+        self.setBorderColor(borderColor, state: UIControlState())
     }
     
     override func drawRect(rect: CGRect) {
@@ -214,15 +214,15 @@ class DOFlatButton :UIButton
         
         UIGraphicsBeginImageContextWithOptions(surfaceRect.size, false, 0.0);
         
-        var borderColor:UIColor? = self.borderColorForState(self.state)
+        let borderColor:UIColor? = self.borderColorForState(self.state)
         if(borderColor != nil){
             borderColor!.set()
-            self.drawRoundedRect(surfaceRect, radius: self.radius!, context: UIGraphicsGetCurrentContext())
+            self.drawRoundedRect(surfaceRect, radius: self.radius!, context: UIGraphicsGetCurrentContext()!)
         }
             
         self.faceColorForState(self.state).set()
         
-        self.drawRoundedRect(CGRectInset(surfaceRect, self.borderWidth!, self.borderWidth!), radius: (self.radius! - self.borderWidth!), context: UIGraphicsGetCurrentContext())
+        self.drawRoundedRect(CGRectInset(surfaceRect, self.borderWidth!, self.borderWidth!), radius: (self.radius! - self.borderWidth!), context: UIGraphicsGetCurrentContext()!)
         
         surfaceImage = UIGraphicsGetImageFromCurrentImageContext()
         
@@ -230,9 +230,9 @@ class DOFlatButton :UIButton
         
         self.sideColorForState(self.state).set()
         
-        var sideRect:CGRect = CGRectMake(0,size.height * 1.0 / 4.0,size.width,size.height * 3.0/4.0)
+        let sideRect:CGRect = CGRectMake(0,size.height * 1.0 / 4.0,size.width,size.height * 3.0/4.0)
         
-        self.drawRoundedRect(sideRect, radius: self.radius!, context: UIGraphicsGetCurrentContext())
+        self.drawRoundedRect(sideRect, radius: self.radius!, context: UIGraphicsGetCurrentContext()!)
         
         var actualSurfaceRect:CGRect
         
@@ -253,12 +253,12 @@ class DOFlatButton :UIButton
         rect.size.width -= 1.0
         rect.size.height -= 1.0
         
-        var minX:CGFloat = CGRectGetMinX(rect)
-        var midX:CGFloat = CGRectGetMidX(rect)
-        var maxX:CGFloat = CGRectGetMaxX(rect)
-        var minY:CGFloat = CGRectGetMinY(rect)
-        var midY:CGFloat = CGRectGetMidY(rect)
-        var maxY:CGFloat = CGRectGetMaxY(rect)
+        let minX:CGFloat = CGRectGetMinX(rect)
+        let midX:CGFloat = CGRectGetMidX(rect)
+        let maxX:CGFloat = CGRectGetMaxX(rect)
+        let minY:CGFloat = CGRectGetMinY(rect)
+        let midY:CGFloat = CGRectGetMidY(rect)
+        let maxY:CGFloat = CGRectGetMaxY(rect)
         
         CGContextMoveToPoint(context, minX, midY);
         CGContextAddArcToPoint(context, minX, minY, midX, minY, radius);
@@ -267,7 +267,7 @@ class DOFlatButton :UIButton
         CGContextAddArcToPoint(context, minX, maxY, minX, midY, radius);
         CGContextClosePath(context);
         
-        CGContextDrawPath(context, kCGPathFillStroke);
+        CGContextDrawPath(context, CGPathDrawingMode.FillStroke);
     }
     
 

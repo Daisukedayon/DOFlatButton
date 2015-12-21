@@ -159,6 +159,8 @@
 		70BD23841AA29A07004B6C43 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0720;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "岡大輔";
 				TargetAttributes = {
@@ -411,6 +413,7 @@
 				70BD23AD1AA29A07004B6C43 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		70BD23AE1AA29A07004B6C43 /* Build configuration list for PBXNativeTarget "DOFlatButtonTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +422,7 @@
 				70BD23B01AA29A07004B6C43 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
