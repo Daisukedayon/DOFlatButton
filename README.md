@@ -46,6 +46,7 @@ A border width of the button
 
 var button1:DOFlatButton = DOFlatButton.buttonWithType(UIButtonType.Custom) as DOFlatButton
 
+```swift
 button1.frame = CGRectMake(60, 164 - 20 - 40, 200, 60)  
 button1.faceColor = UIColor(red: 86.0/255.0, green: 161.0/255.0, blue: 217.0/255.0, alpha: 1.0)  
 button1.sideColor = UIColor(red: 79.0/255.0, green: 127.0/255.0, blue: 179.0/255.0, alpha: 1.0)  
@@ -56,6 +57,7 @@ button1.titleLabel?.font = UIFont.boldSystemFontOfSize(16)
 button1.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)  
 button1.setTitle("DOFlatButton", forState: UIControlState.Normal)  
 self.view.addSubview(button1)  
+```
 
 ## License
 DOFlatButton is released under the MIT License
